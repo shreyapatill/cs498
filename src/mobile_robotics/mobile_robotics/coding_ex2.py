@@ -183,32 +183,67 @@ class ExtendedKalmanFilter(Node):
             
         #Prediction step
         #First write out all the dots for all the states, e.g. pxdot, pydot, q1dot etc
-       
+
+        # Position derivatives (equation 101: pdot = v)
         pxdot = self.xhat[3,0]
-        # .. your code here
+        pydot = self.xhat[4,0]
+        pzdot = self.xhat[5,0]
+
+        # Velocity derivatives (equation 102: vdot = R_bi @ a + gravity)
+        accel_body = np.array([[self.fx, self.fy, self.fz]]).T
+        accel_inertial = self.R_bi @ accel_body
+        vxdot = accel_inertial[0,0]
+        vydot = accel_inertial[1,0]
+        vzdot = accel_inertial[2,0] - 9.801  # Add gravity in z direction
+
+        # Quaternion derivatives (equation 103: qdot = 0.5 * Omega(w) @ q)
+        # Define angular velocities P, Q, R (bias-corrected)
+        P = self.p
+        Q = self.q
+        R = self.r
+
+        # Omega matrix (equation 107)
+        Omega = np.array([[0, -P, -Q, -R],
+                         [P,  0,  R, -Q],
+                         [Q, -R,  0,  P],
+                         [R,  Q, -P,  0]])
+
+        qdot = 0.5 * Omega @ self.quat
+        q1dot = qdot[0,0]
+        q2dot = qdot[1,0]
+        q3dot = qdot[2,0]
+        q4dot = qdot[3,0]
+
+        # Bias derivatives (equations 104-105: bias derivatives are zero)
+        bpdot = 0
+        bqdot = 0
+        brdot = 0
+        bfxdot = 0
+        bfydot = 0
+        bfzdot = 0
         
         #Now integrate Euler Integration for Process Updates and Covariance Updates
         # Euler works fine
         # Remember again the state vector [x y z vx vy vz q1 q2 q3 q4 bp bq br bx by bz]
         self.xhat[0,0] = self.xhat[0,0] + self.dt*pxdot
-        self.xhat[1,0] = None # ..
-        self.xhat[2,0] = None # ..
-        self.xhat[3,0] = None # ..
-        self.xhat[4,0] = None # ..
-        self.xhat[5,0] = None # .. Do not forget Gravity (9.801 m/s2) 
-        self.xhat[6,0] = None # ..
-        self.xhat[7,0] = None # ..
-        self.xhat[8,0] = None # ..
-        self.xhat[9,0] = None # ..
+        self.xhat[1,0] = self.xhat[1,0] + self.dt*pydot
+        self.xhat[2,0] = self.xhat[2,0] + self.dt*pzdot
+        self.xhat[3,0] = self.xhat[3,0] + self.dt*vxdot
+        self.xhat[4,0] = self.xhat[4,0] + self.dt*vydot
+        self.xhat[5,0] = self.xhat[5,0] + self.dt*vzdot
+        self.xhat[6,0] = self.xhat[6,0] + self.dt*q1dot
+        self.xhat[7,0] = self.xhat[7,0] + self.dt*q2dot
+        self.xhat[8,0] = self.xhat[8,0] + self.dt*q3dot
+        self.xhat[9,0] = self.xhat[9,0] + self.dt*q4dot
 
         print("x ekf: ", self.xhat[0,0])
         print("y ekf: ", self.xhat[1,0])
         print("z ekf: ", self.xhat[2,0])
         
-        # Extract and normalize the quat    
+        # Extract and normalize the quat
         self.quat = np.array([[self.xhat[6,0], self.xhat[7,0], self.xhat[8,0], self.xhat[9,0]]]).T
-        # .. Normailize quat
-        #self.quat = None .. # code here. Uncomment this line
+        # Normalize quat (equation: q <- q/norm(q))
+        self.quat = self.quat / LA.norm(self.quat)
         
         #re-assign quat
         self.xhat[6,0] = self.quat[0,0]
@@ -218,55 +253,102 @@ class ExtendedKalmanFilter(Node):
         
                 
         # Now write out all the partials to compute the transition matrix Phi
-        #delV/delQ
-        
-        Fvq = None # ..
-        #delV/del_abias
-        
-        Fvb = None # ..
-        
-        #delQ/delQ
-        
-        Fqq = None # ..
-     
-        #delQ/del_gyrobias
-        Fqb = None # ..
-        # Now assemble the Transition matrix A
-        
-        A = None # ..
-        
-        #Propagate the error covariance matrix, I suggest using the continuous integration since Q, R are not discretized 
+        # Update quaternion values after normalization
+        q1 = self.xhat[6,0]
+        q2 = self.xhat[7,0]
+        q3 = self.xhat[8,0]
+        q4 = self.xhat[9,0]
+
+        #delV/delQ (Fvq) - equation 118
+        ax = self.fx
+        ay = self.fy
+        az = self.fz
+
+        Fvq = 2*np.array([[q1*ax + q4*ay - q3*az,  q2*ax + q3*ay + q4*az,  -q3*ax + q2*ay + q1*az,  -q4*ax - q1*ay + q2*az],
+                          [q4*ax + q1*ay - q2*az,  q3*ax - q2*ay - q1*az,   q2*ax + q3*ay + q4*az,   q1*ax - q4*ay + q3*az],
+                          [-q3*ax + q2*ay + q1*az, q4*ax + q1*ay - q2*az,  -q1*ax + q4*ay - q3*az,   q2*ax + q3*ay + q4*az]])
+
+        #delV/del_abias (Fvba) - equation 114
+        Fvb = -self.R_bi
+
+        #delQ/delQ (Fqq) - equation 115: -(1/2)*Omega(omega)
+        Fqq = -0.5 * Omega
+
+        #delQ/del_gyrobias (Fqbω) - equation 120
+        Fqb = 0.5 * np.array([[q2,  q3,  q4],
+                              [-q1, q4, -q3],
+                              [-q4, -q1, q2],
+                              [q3, -q2, -q1]])
+        # Now assemble the Transition matrix A (equation 121)
+        # A is 16x16: state vector is [x y z vx vy vz q1 q2 q3 q4 bp bq br bfx bfy bfz]
+        # Row structure:
+        # rows 0-2 (pos):   Z(3x3) I(3x3) Z(3x4) Z(3x3) Z(3x3)
+        # rows 3-5 (vel):   Z(3x3) Z(3x3) Fvq    Z(3x3) Fvb
+        # rows 6-9 (quat):  Z(4x3) Z(4x3) Fqq    Fqb    Z(4x3)
+        # rows 10-12 (bω):  Z(3x3) Z(3x3) Z(3x4) Z(3x3) Z(3x3)
+        # rows 13-15 (ba):  Z(3x3) Z(3x3) Z(3x4) Z(3x3) Z(3x3)
+
+        A = np.zeros((16,16))
+        # Position row: pdot = v
+        A[0:3, 3:6] = self.I
+        # Velocity row: vdot depends on quaternion and accel bias
+        A[3:6, 6:10] = Fvq
+        A[3:6, 13:16] = Fvb
+        # Quaternion row: qdot depends on quaternion and gyro bias
+        A[6:10, 6:10] = Fqq
+        A[6:10, 10:13] = Fqb
+
+        #Propagate the error covariance matrix, I suggest using the continuous integration since Q, R are not discretized
         #Pdot = A@P+P@A.transpose() + Q
         #P = P +Pdot*dt
-        Pdot = None # .. 
-        self.P = None  # ..
+        Pdot = A @ self.P + self.P @ A.T + self.Q
+        self.P = self.P + Pdot * self.dt
         
         #Correction step
         #Get measurements 3 positions and 3 velocities from GPS
         self.z = np.array([[self.measure[6], self.measure[7], self.measure[8], self.measure[9], self.measure[10], self.measure[11]]]).T #x y z vx vy vz
     
         #Write out the measurement matrix linearization to get H
-        
-        # del v/del q
-        
-        Hvq = None # ..
-        
-        #del P/del q
-        Hxq = None # ..
-        
-        # Assemble H
-        H = None # ..
+        # Measurement model accounts for GPS offset from CG
+        # pCG = pGPS - R_bi * rGPS (equation 122)
+        # vCG = vGPS - R_bi * (omega x rGPS) (equation 123)
+
+        # Get rgps first element (note: rgps = [-0.15, 0, 0] from line 70)
+        rgps_x = self.rgps[0]
+
+        #del P/del q (Hxq) - equation 124
+        # Since rgps has only x component, we only use first column of R_bi
+        Hxq = np.array([[-rgps_x*2*q2,  rgps_x*2*q3,  rgps_x*2*q4, -rgps_x*2*q1],
+                        [-rgps_x*2*q3, -rgps_x*2*q2,  rgps_x*2*q1,  rgps_x*2*q4],
+                        [-rgps_x*2*q4,  rgps_x*2*q1, -rgps_x*2*q2,  rgps_x*2*q3]])
+
+        # del v/del q (Hvq) - equation 125
+        # Hvq accounts for derivative of R_bi*(omega x rgps) w.r.t. q
+        Hvq = np.array([[rgps_x*2*(q3*Q + q4*R), rgps_x*2*(q1*Q - q2*R), rgps_x*2*(q2*Q + q1*R), -rgps_x*2*q2],
+                        [rgps_x*2*(-q2*Q - q1*R), rgps_x*2*(q4*Q - q3*R), rgps_x*2*(q3*Q + q4*R), -rgps_x*2*q3],
+                        [rgps_x*2*(q1*Q - q2*R), rgps_x*2*(-q3*Q - q4*R), rgps_x*2*(q4*Q - q3*R), -rgps_x*2*q4]])
+
+        # Assemble H (equation 126)
+        # H is 6x16: measurements are [x y z vx vy vz]
+        # H = [ I(3x3)  Z(3x3)  Hxq(3x4)  Z(3x6) ]
+        #     [ Z(3x3)  I(3x3)  Hvq(3x4)  Z(3x6) ]
+        H = np.zeros((6,16))
+        H[0:3, 0:3] = self.I    # position measurements
+        H[0:3, 6:10] = Hxq       # position depends on quaternion
+        H[3:6, 3:6] = self.I     # velocity measurements
+        H[3:6, 6:10] = Hvq       # velocity depends on quaternion
 
         #Compute Kalman gain
-        
-        L = None # Kalman gain
-        
-        #Perform xhat correction    xhat = xhat + L@(z-H@xhat)
-        #self.xhat = None # .. uncomment
-        
-        #propagate error covariance approximation P = (np.eye(16,16)-L@H)@P
-        
-        self.P = None # ..
+        # L = P @ H^T @ (H @ P @ H^T + R)^-1
+        S = H @ self.P @ H.T + self.R  # Innovation covariance
+        L = self.P @ H.T @ LA.inv(S)    # Kalman gain
+
+        #Perform xhat correction: xhat = xhat + L@(z-H@xhat)
+        innovation = self.z - H @ self.xhat
+        self.xhat = self.xhat + L @ innovation
+
+        #propagate error covariance approximation P = (I - L@H)@P
+        self.P = (np.eye(16,16) - L @ H) @ self.P
 
         #Now let us do some book-keeping 
         # Get some Euler angles
@@ -280,10 +362,10 @@ class ExtendedKalmanFilter(Node):
           
         # Saving data for the plots. Uncomment the 4 lines below once you have finished the ekf function
 
-        #DP = np.diag(self.P)
-        #self.P_R.append(DP[0:3])
-        #self.P_R1.append(DP[3:6])
-        #self.P_R2.append(DP[6:10])
+        DP = np.diag(self.P)
+        self.P_R.append(DP[0:3])
+        self.P_R1.append(DP[3:6])
+        self.P_R2.append(DP[6:10])
         self.Pos.append(self.xhat[0:3].T[0])
         self.POS_X.append(self.xhat[0,0])
         self.POS_Y.append(self.xhat[1,0])
