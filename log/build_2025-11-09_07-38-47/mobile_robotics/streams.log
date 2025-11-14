@@ -1,0 +1,21 @@
+[1.257s] Invoking command in '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build --no-deps symlink_data --force
+[1.571s] running develop
+[1.777s] running egg_info
+[1.777s] writing mobile_robotics.egg-info/PKG-INFO
+[1.778s] writing dependency_links to mobile_robotics.egg-info/dependency_links.txt
+[1.779s] writing entry points to mobile_robotics.egg-info/entry_points.txt
+[1.779s] writing requirements to mobile_robotics.egg-info/requires.txt
+[1.779s] writing top-level names to mobile_robotics.egg-info/top_level.txt
+[1.782s] reading manifest file 'mobile_robotics.egg-info/SOURCES.txt'
+[1.784s] writing manifest file 'mobile_robotics.egg-info/SOURCES.txt'
+[1.785s] running build_ext
+[1.785s] Creating /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile-robotics.egg-link (link to .)
+[1.787s] Installing cod_ex2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.787s] Installing part1 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.789s] Installing part2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.789s] 
+[1.790s] Installed /home/shreyap7/cs498/ros2_ws/build/mobile_robotics
+[1.790s] running symlink_data
+[1.790s] symbolically linking /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/resource/mobile_robotics -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/share/ament_index/resource_index/packages
+[1.791s] symbolically linking /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/package.xml -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/share/mobile_robotics
+[1.829s] Invoked command in '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics' returned '0': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build --no-deps symlink_data --force

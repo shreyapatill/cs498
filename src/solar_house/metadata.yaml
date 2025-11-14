@@ -1,0 +1,93 @@
+rosbag2_bagfile_information:
+  compression_format: ''
+  compression_mode: ''
+  custom_data: {}
+  duration:
+    nanoseconds: 231199082507
+  files:
+  - duration:
+      nanoseconds: 231199082507
+    message_count: 27745
+    path: solar_house.db3
+    starting_time:
+      nanoseconds_since_epoch: 1662691413828153511
+  message_count: 27745
+  relative_file_paths:
+  - solar_house.db3
+  starting_time:
+    nanoseconds_since_epoch: 1662691413828153511
+  storage_identifier: sqlite3
+  topics_with_message_count:
+  - message_count: 2312
+    topic_metadata:
+      name: /Accely
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2313
+    topic_metadata:
+      name: /Accelx
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Accelz
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Gyro_roll
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Gyro_pitch
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Gyro_yaw
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Blspeed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Brspeed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Flspeed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /Frspeed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /latitude
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  - message_count: 2312
+    topic_metadata:
+      name: /longitude
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: std_msgs/msg/Float32
+  version: 6

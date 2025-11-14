@@ -1,0 +1,5 @@
+[console_scripts]
+cod_ex2 = mobile_robotics.coding_ex2:main
+part1 = mobile_robotics.coding_ex1_part1:main
+part2 = mobile_robotics.coding_ex1_part2:main
+

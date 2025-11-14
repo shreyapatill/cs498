@@ -1,0 +1,10 @@
+stdin is not a terminal device. Keyboard handling disabled.[INFO] [1763159776.441494061] [rosbag2_storage]: Opened database '/home/shreyap7/cs498/2025_coding_exercise2/2022_coding_exercise2/solar_house_v3/solar_house_v3.db3' for READ_ONLY.
+[INFO] [1763159776.441647862] [rosbag2_player]: Set rate to 1
+[INFO] [1763159776.465319592] [rosbag2_player]: Adding keyboard callbacks.
+[INFO] [1763159776.465417936] [rosbag2_player]: Press SPACE for Pause/Resume
+[INFO] [1763159776.465429872] [rosbag2_player]: Press CURSOR_RIGHT for Play Next Message
+[INFO] [1763159776.465437547] [rosbag2_player]: Press CURSOR_UP for Increase Rate 10%
+[INFO] [1763159776.465443683] [rosbag2_player]: Press CURSOR_DOWN for Decrease Rate 10%
+[INFO] [1763159776.466180461] [rosbag2_storage]: Opened database '/home/shreyap7/cs498/2025_coding_exercise2/2022_coding_exercise2/solar_house_v3/solar_house_v3.db3' for READ_ONLY.
+[INFO] [1763159948.281488777] [rclcpp]: signal_handler(signum=2)
+[INFO] [1763159948.282918918] [rclcpp]: signal_handler(signum=15)

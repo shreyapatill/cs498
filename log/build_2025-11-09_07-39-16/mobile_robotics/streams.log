@@ -1,0 +1,19 @@
+[0.788s] Invoking command in '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build --no-deps symlink_data
+[1.100s] running develop
+[1.284s] running egg_info
+[1.284s] writing mobile_robotics.egg-info/PKG-INFO
+[1.285s] writing dependency_links to mobile_robotics.egg-info/dependency_links.txt
+[1.286s] writing entry points to mobile_robotics.egg-info/entry_points.txt
+[1.286s] writing requirements to mobile_robotics.egg-info/requires.txt
+[1.286s] writing top-level names to mobile_robotics.egg-info/top_level.txt
+[1.288s] reading manifest file 'mobile_robotics.egg-info/SOURCES.txt'
+[1.289s] writing manifest file 'mobile_robotics.egg-info/SOURCES.txt'
+[1.290s] running build_ext
+[1.291s] Creating /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile-robotics.egg-link (link to .)
+[1.292s] Installing cod_ex2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.293s] Installing part1 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.293s] Installing part2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.293s] 
+[1.293s] Installed /home/shreyap7/cs498/ros2_ws/build/mobile_robotics
+[1.293s] running symlink_data
+[1.330s] Invoked command in '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics' returned '0': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build --no-deps symlink_data

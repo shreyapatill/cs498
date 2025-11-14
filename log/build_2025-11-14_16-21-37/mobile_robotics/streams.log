@@ -1,0 +1,40 @@
+[1.078s] Invoking command in '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build
+[1.385s] running develop
+[1.586s] Removing /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile-robotics.egg-link (link to .)
+[1.621s] Invoked command in '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics' returned '0': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build
+[1.626s] Invoking command in '/home/shreyap7/cs498/ros2_ws/src/mobile_robotics': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mobile_robotics build --build-base /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build install --record /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/install.log --single-version-externally-managed install_data --force
+[1.913s] running egg_info
+[1.915s] writing ../../build/mobile_robotics/mobile_robotics.egg-info/PKG-INFO
+[1.917s] writing dependency_links to ../../build/mobile_robotics/mobile_robotics.egg-info/dependency_links.txt
+[1.917s] writing entry points to ../../build/mobile_robotics/mobile_robotics.egg-info/entry_points.txt
+[1.918s] writing requirements to ../../build/mobile_robotics/mobile_robotics.egg-info/requires.txt
+[1.918s] writing top-level names to ../../build/mobile_robotics/mobile_robotics.egg-info/top_level.txt
+[1.921s] reading manifest file '../../build/mobile_robotics/mobile_robotics.egg-info/SOURCES.txt'
+[1.923s] writing manifest file '../../build/mobile_robotics/mobile_robotics.egg-info/SOURCES.txt'
+[1.923s] running build
+[1.923s] running build_py
+[1.923s] copying mobile_robotics/coding_ex2.py -> /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build/lib/mobile_robotics
+[1.925s] running install
+[1.926s] running install_lib
+[1.927s] creating /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics
+[1.928s] copying /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build/lib/mobile_robotics/utils.py -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics
+[1.929s] copying /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build/lib/mobile_robotics/coding_ex1_part1.py -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics
+[1.930s] copying /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build/lib/mobile_robotics/coding_ex1_part2.py -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics
+[1.930s] copying /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build/lib/mobile_robotics/coding_ex2.py -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics
+[1.931s] copying /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build/lib/mobile_robotics/__init__.py -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics
+[1.932s] byte-compiling /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics/utils.py to utils.cpython-310.pyc
+[1.933s] byte-compiling /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics/coding_ex1_part1.py to coding_ex1_part1.cpython-310.pyc
+[1.936s] byte-compiling /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics/coding_ex1_part2.py to coding_ex1_part2.cpython-310.pyc
+[1.938s] byte-compiling /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics/coding_ex2.py to coding_ex2.cpython-310.pyc
+[1.945s] byte-compiling /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics/__init__.py to __init__.cpython-310.pyc
+[1.945s] running install_data
+[1.946s] copying resource/mobile_robotics -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/share/ament_index/resource_index/packages
+[1.948s] copying package.xml -> /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/share/mobile_robotics
+[1.948s] running install_egg_info
+[1.951s] Copying ../../build/mobile_robotics/mobile_robotics.egg-info to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics-0.0.0-py3.10.egg-info
+[1.956s] running install_scripts
+[1.980s] Installing cod_ex2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.982s] Installing part1 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.982s] Installing part2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics
+[1.982s] writing list of installed files to '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/install.log'
+[2.015s] Invoked command in '/home/shreyap7/cs498/ros2_ws/src/mobile_robotics' returned '0': PYTHONPATH=/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mobile_robotics build --build-base /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build install --record /home/shreyap7/cs498/ros2_ws/build/mobile_robotics/install.log --single-version-externally-managed install_data --force

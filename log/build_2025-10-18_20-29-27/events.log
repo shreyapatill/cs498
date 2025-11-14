@@ -1,0 +1,49 @@
+[0.000000] (-) TimerEvent: {}
+[0.001590] (mobile_robotics) JobQueued: {'identifier': 'mobile_robotics', 'dependencies': OrderedDict()}
+[0.002035] (mobile_robotics) JobStarted: {'identifier': 'mobile_robotics'}
+[0.098967] (-) TimerEvent: {}
+[0.199384] (-) TimerEvent: {}
+[0.299954] (-) TimerEvent: {}
+[0.400475] (-) TimerEvent: {}
+[0.500973] (-) TimerEvent: {}
+[0.602292] (-) TimerEvent: {}
+[0.702907] (-) TimerEvent: {}
+[0.803264] (-) TimerEvent: {}
+[0.903613] (-) TimerEvent: {}
+[1.003934] (-) TimerEvent: {}
+[1.104240] (-) TimerEvent: {}
+[1.204652] (-) TimerEvent: {}
+[1.305144] (-) TimerEvent: {}
+[1.405715] (-) TimerEvent: {}
+[1.506140] (-) TimerEvent: {}
+[1.512620] (mobile_robotics) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/mobile_robotics', 'build', '--build-base', '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/build', 'install', '--record', '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/shreyap7/cs498/ros2_ws/src/mobile_robotics', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/mnt/c/Users/shrey/AppData/Local/Programs/cursor', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'USER': 'shreyap7', 'CLAUDE_CODE_ENTRYPOINT': 'claude-vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/shreyap7/.cursor-server/bin/b9e5948c1ad20443a5cecba6b84a3c9b99d62580/out/nls.messages.json","locale":"en","availableLanguages":{}}', 'GIT_EDITOR': 'true', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'DEBUG': '1', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/shreyap7', 'OLDPWD': '/home/shreyap7/cs498', 'NVM_BIN': '/home/shreyap7/.nvm/versions/node/v22.20.0/bin', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-a75c3fcb-ff8d-42b5-8d52-f5b261d67409.sock', 'NVM_INC': '/home/shreyap7/.nvm/versions/node/v22.20.0/include/node', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'NVM_DIR': '/home/shreyap7/.nvm', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'shreyap7', 'NAME': 'shreyas-laptop', 'WSL_INTEROP': '/run/WSL/439_interop', 'VSCODE_HANDLES_SIGPIPE': 'true', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/home/shreyap7/.local/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/shreyap7/.cursor-server/bin/b9e5948c1ad20443a5cecba6b84a3c9b99d62580/bin/remote-cli:/home/shreyap7/.local/bin:/home/shreyap7/.npm-global/bin:/home/shreyap7/.nvm/versions/node/v22.20.0/bin:/opt/ros/humble/bin:/opt/toolchains/riscv/bin/:/home/shreyap7/.cursor-server/bin/b9e5948c1ad20443a5cecba6b84a3c9b99d62580/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/shrey/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Users/shrey/AppData/Local/Android/Sdk/tools:/mnt/c/Users/shrey/AppData/Local/Android/Sdk/tools/bin:/mnt/c/Users/shrey/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Program Files (x86)/GnuWin32/bin:/mnt/c/Users/shrey/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/nvm:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/PHP:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Users/shrey/AppData/Roaming/Composer/vendor/bin/json_pp:/mnt/c/Program Files/curl-8.12.1_4-win64-mingw:/mnt/c/Users/shrey/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/shrey/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/shrey/AppData/Roaming/npm:/mnt/c/Users/shrey/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Users/shrey/AppData/Roaming/Composer/vendor/bin:/mnt/c/Users/shrey/AppData/Local/Programs/cursor/resources/app/bin:/snap/bin', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'ELECTRON_RUN_AS_NODE': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CLAUDECODE': '1', 'PWD': '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/prefix_override:/home/shreyap7/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'WSLENV': ''}, 'shell': False}
+[1.606448] (-) TimerEvent: {}
+[1.706903] (-) TimerEvent: {}
+[1.807466] (-) TimerEvent: {}
+[1.907986] (-) TimerEvent: {}
+[2.008505] (-) TimerEvent: {}
+[2.045918] (mobile_robotics) StdoutLine: {'line': b'running egg_info\n'}
+[2.047295] (mobile_robotics) StdoutLine: {'line': b'writing ../../build/mobile_robotics/mobile_robotics.egg-info/PKG-INFO\n'}
+[2.048508] (mobile_robotics) StdoutLine: {'line': b'writing dependency_links to ../../build/mobile_robotics/mobile_robotics.egg-info/dependency_links.txt\n'}
+[2.049305] (mobile_robotics) StdoutLine: {'line': b'writing entry points to ../../build/mobile_robotics/mobile_robotics.egg-info/entry_points.txt\n'}
+[2.050923] (mobile_robotics) StdoutLine: {'line': b'writing requirements to ../../build/mobile_robotics/mobile_robotics.egg-info/requires.txt\n'}
+[2.051247] (mobile_robotics) StdoutLine: {'line': b'writing top-level names to ../../build/mobile_robotics/mobile_robotics.egg-info/top_level.txt\n'}
+[2.054069] (mobile_robotics) StdoutLine: {'line': b"reading manifest file '../../build/mobile_robotics/mobile_robotics.egg-info/SOURCES.txt'\n"}
+[2.056428] (mobile_robotics) StdoutLine: {'line': b"writing manifest file '../../build/mobile_robotics/mobile_robotics.egg-info/SOURCES.txt'\n"}
+[2.056682] (mobile_robotics) StdoutLine: {'line': b'running build\n'}
+[2.056786] (mobile_robotics) StdoutLine: {'line': b'running build_py\n'}
+[2.056894] (mobile_robotics) StdoutLine: {'line': b'running install\n'}
+[2.057869] (mobile_robotics) StdoutLine: {'line': b'running install_lib\n'}
+[2.061805] (mobile_robotics) StdoutLine: {'line': b'running install_data\n'}
+[2.062073] (mobile_robotics) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.069236] (mobile_robotics) StdoutLine: {'line': b"removing '/home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[2.070301] (mobile_robotics) StdoutLine: {'line': b'Copying ../../build/mobile_robotics/mobile_robotics.egg-info to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages/mobile_robotics-0.0.0-py3.10.egg-info\n'}
+[2.071526] (mobile_robotics) StdoutLine: {'line': b'running install_scripts\n'}
+[2.108742] (-) TimerEvent: {}
+[2.121987] (mobile_robotics) StdoutLine: {'line': b'Installing part1 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics\n'}
+[2.122684] (mobile_robotics) StdoutLine: {'line': b'Installing part2 script to /home/shreyap7/cs498/ros2_ws/install/mobile_robotics/lib/mobile_robotics\n'}
+[2.123325] (mobile_robotics) StdoutLine: {'line': b"writing list of installed files to '/home/shreyap7/cs498/ros2_ws/build/mobile_robotics/install.log'\n"}
+[2.171100] (mobile_robotics) CommandEnded: {'returncode': 0}
+[2.208936] (-) TimerEvent: {}
+[2.212519] (mobile_robotics) JobEnded: {'identifier': 'mobile_robotics', 'rc': 0}
+[2.215525] (-) EventReactorShutdown: {}
