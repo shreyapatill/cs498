@@ -114,11 +114,11 @@ class ExtendedKalmanFilter(Node):
         # In practice, the IMU measurements should be filtered. In this coding exercise, we are just going to clip
         # the values of velocity and acceleration to keep them in physically possible intervals.
         self.measure[0] = np.clip(msg.angular_velocity.x,-5,5) #(-5,5)
-        self.measure[1] = None #..(-5,5)
-        self.measure[2] = None #..(-5,5)
-        self.measure[3] = None #..(-6,6)
-        self.measure[4] = None #..(-6,6)
-        self.measure[5] = None #..(-16,-4) 
+        self.measure[1] = np.clip(msg.angular_velocity.y,-5,5) #(-5,5)
+        self.measure[2] = np.clip(msg.angular_velocity.z,-5,5) #(-5,5)
+        self.measure[3] = np.clip(msg.linear_acceleration.x,-6,6) #(-6,6)
+        self.measure[4] = np.clip(msg.linear_acceleration.y,-6,6) #(-6,6)
+        self.measure[5] = np.clip(msg.linear_acceleration.z,-16,-4) #(-16,-4) 
  
     def callback_gps_lat(self, msg):
         self.lat = msg.data
@@ -139,12 +139,12 @@ class ExtendedKalmanFilter(Node):
             self.lon0 = msg.data
             self.flag_lon = True    
     
-    def callback_gps_speed_east(self, msg): 
-        self.measure[9] = None # ..
+    def callback_gps_speed_east(self, msg):
+        self.measure[9] = msg.data # vx (velocity east)
         self.measure[11] = 0.0 # vz
 
     def callback_gps_speed_north(self, msg):
-        self.measure[10] = None # vy
+        self.measure[10] = msg.data # vy (velocity north)
 
    
     def ekf_callback(self):
